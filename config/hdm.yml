@@ -1,0 +1,11 @@
+---
+#
+# Configuration file for 'hdm' plugin
+#
+
+# Can be true, false, or http/https to enable just one of the protocols
+:enabled: true
+
+#:hdm_url: http://localhost:3000
+#:hdm_user: api
+#:hdm_password: api

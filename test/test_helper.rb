@@ -1,6 +1,7 @@
-require 'test/unit'
-require 'mocha/test_unit'
+require 'minitest/autorun'
+require 'mocha/minitest'
 require 'rack/test'
+require 'webmock/minitest'
 
 require 'smart_proxy_for_testing'
 
