@@ -7,6 +7,14 @@ module Proxy
       authorize_with_trusted_hosts
       authorize_with_ssl_client
 
+      get '/nodes/:node/keys' do |n|
+        get_from_hdm("/api/v1/nodes/#{n}/keys")
+      end
+
+      get '/nodes/:node/keys/:key' do |n, k|
+        get_from_hdm("/api/v1/nodes/#{n}/keys/#{k}")
+      end
+
       get '/environments/:environment/nodes/:node/keys' do |e, n|
         get_from_hdm("/api/v1/environments/#{e}/nodes/#{n}/keys")
       end
@@ -31,8 +39,8 @@ module Proxy
 
       def perform_request(path)
         req = Net::HTTP::Get.new(URI.join("#{hdm_uri.to_s.chomp('/')}/", path))
+        req['Accept'] = 'application/json'
         req.basic_auth Plugin.settings.hdm_user, Plugin.settings.hdm_password
-        req.add_field('Accept', 'application/json')
         http.request(req)
       end
 
