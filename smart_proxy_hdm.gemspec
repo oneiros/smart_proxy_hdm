@@ -16,6 +16,8 @@ Gem::Specification.new do |s|
   s.files       = Dir['{config,lib,bundler.d}/**/*'] + ['README.md', 'LICENSE']
   s.test_files  = Dir['test/**/*']
 
+  s.required_ruby_version = Gem::Requirement.new('>= 2.7')
+
   s.add_development_dependency('rake')
   s.add_development_dependency('mocha')
   s.add_development_dependency('minitest')
