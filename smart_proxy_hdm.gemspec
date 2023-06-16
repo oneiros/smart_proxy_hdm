@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = Gem::Requirement.new('>= 2.7')
 
-  s.add_development_dependency('rake')
-  s.add_development_dependency('mocha')
-  s.add_development_dependency('minitest')
+  s.add_development_dependency 'rake', '~> 13.0', '>= 13.0.6'
+  s.add_development_dependency 'mocha', '~> 2.0', '>= 2.0.4'
+  s.add_development_dependency 'minitest', '~> 5.18'
 end
