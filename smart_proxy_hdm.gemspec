@@ -11,14 +11,19 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/betadots/smart_proxy_hdm'
 
   s.summary     = "An HDM Plugin for Foreman's smart proxy"
-  s.description = "Read hiera data via HDM to display alongside hosts in Foreman"
+  s.description = 'Read hiera data via HDM to display alongside hosts in Foreman'
 
   s.files       = Dir['{config,lib,bundler.d}/**/*'] + ['README.md', 'LICENSE']
   s.test_files  = Dir['test/**/*']
 
   s.required_ruby_version = Gem::Requirement.new('>= 2.7')
 
-  s.add_development_dependency 'rake', '~> 13.0', '>= 13.0.6'
-  s.add_development_dependency 'mocha', '~> 2.0', '>= 2.0.4'
   s.add_development_dependency 'minitest', '~> 5.18'
+  s.add_development_dependency 'mocha', '~> 2.0', '>= 2.0.4'
+  s.add_development_dependency 'rake', '~> 13.0', '>= 13.0.6'
+  s.add_development_dependency 'rubocop', '~> 1.52', '>= 1.52.1'
+  s.add_development_dependency 'rubocop-minitest', '~> 0.31.0'
+  s.add_development_dependency 'rubocop-performance', '~> 1.18'
+  s.add_development_dependency 'rubocop-rails', '~> 2.19', '>= 2.19.1'
+  s.add_development_dependency 'rubocop-rake', '~> 0.6.0'
 end

@@ -7,3 +7,6 @@ Gemfile.lock
 .rvmrc*
 .ruby-*
 tags
+.vendor/
+vendor/
+.bundle/

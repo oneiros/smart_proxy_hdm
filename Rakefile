@@ -27,3 +27,10 @@ else
     config.project = 'smart_proxy_hdm'
   end
 end
+
+begin
+  require 'rubocop/rake_task'
+  RuboCop::RakeTask.new
+rescue StandardError => _e
+  puts 'Rubocop not loaded.'
+end

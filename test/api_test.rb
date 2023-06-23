@@ -14,7 +14,7 @@ class HdmApiTest < Minitest::Test
   end
 
   def test_keys_index_without_environment
-    keys_data = [{"name" => "hdm::float"}, {"name" => "hdm::integer"}]
+    keys_data = [{ 'name' => 'hdm::float' }, { 'name' => 'hdm::integer' }]
     stub_request(
       :get,
       "#{::Proxy::Hdm::Plugin.settings.hdm_url}/api/v1/nodes/test.host/keys"
@@ -22,16 +22,16 @@ class HdmApiTest < Minitest::Test
 
     get '/nodes/test.host/keys'
     assert last_response.ok?, "Last response was not ok: #{last_response.body}"
-    assert last_response['Content-Type'] == 'application/json'
+    assert_equal last_response['Content-Type'], 'application/json'
     response = JSON.parse(last_response.body)
     assert_equal response, keys_data
   end
 
   def test_key_show_without_environment
     key_data = [{
-      "hierarchy_name" => "main",
-      "files" => [
-        {"path" => "common.yaml", "value" => 2}
+      'hierarchy_name' => 'main',
+      'files' => [
+        { 'path' => 'common.yaml', 'value' => 2 }
       ]
     }]
 
@@ -42,13 +42,13 @@ class HdmApiTest < Minitest::Test
 
     get '/nodes/test.host/keys/hdm::integer'
     assert last_response.ok?, "Last response was not ok: #{last_response.body}"
-    assert last_response['Content-Type'] == 'application/json'
+    assert_equal last_response['Content-Type'], 'application/json'
     response = JSON.parse(last_response.body)
     assert_equal response, key_data
   end
 
   def test_keys_index_with_environment
-    keys_data = [{"name" => "hdm::float"}, {"name" => "hdm::integer"}]
+    keys_data = [{ 'name' => 'hdm::float' }, { 'name' => 'hdm::integer' }]
     stub_request(
       :get,
       "#{::Proxy::Hdm::Plugin.settings.hdm_url}/api/v1/environments/development/nodes/test.host/keys"
@@ -56,16 +56,16 @@ class HdmApiTest < Minitest::Test
 
     get '/environments/development/nodes/test.host/keys'
     assert last_response.ok?, "Last response was not ok: #{last_response.body}"
-    assert last_response['Content-Type'] == 'application/json'
+    assert_equal last_response['Content-Type'], 'application/json'
     response = JSON.parse(last_response.body)
     assert_equal response, keys_data
   end
 
   def test_key_show_with_environment
     key_data = [{
-      "hierarchy_name" => "main",
-      "files" => [
-        {"path" => "common.yaml", "value" => 2}
+      'hierarchy_name' => 'main',
+      'files' => [
+        { 'path' => 'common.yaml', 'value' => 2 }
       ]
     }]
 
@@ -76,7 +76,7 @@ class HdmApiTest < Minitest::Test
 
     get '/environments/development/nodes/test.host/keys/hdm::integer'
     assert last_response.ok?, "Last response was not ok: #{last_response.body}"
-    assert last_response['Content-Type'] == 'application/json'
+    assert_equal last_response['Content-Type'], 'application/json'
     response = JSON.parse(last_response.body)
     assert_equal response, key_data
   end
@@ -85,11 +85,11 @@ class HdmApiTest < Minitest::Test
     stub_request(
       :get,
       "#{::Proxy::Hdm::Plugin.settings.hdm_url}/api/v1/environments/development/nodes/test.host/keys/unknown"
-    ).to_return(status: [404, "Not found"])
+    ).to_return(status: [404, 'Not found'])
 
     get '/environments/development/nodes/test.host/keys/unknown'
 
-    refute last_response.ok?, "Last response was ok, should have been an error"
+    refute last_response.ok?, 'Last response was ok, should have been an error'
     assert_equal 404, last_response.status
     assert_equal "HDM server at http://localhost:3000 returned an error: 'Not found'", last_response.body
   end
