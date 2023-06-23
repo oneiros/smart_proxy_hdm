@@ -1,5 +1,11 @@
 # SmartProxyHdm
 
+[![License](https://img.shields.io/github/license/betadots/smart_proxy_hdm.svg)](https://github.com/betadots/smart_proxy_hdm/blob/master/LICENSE)
+[![Test](https://github.com/betadots/smart_proxy_hdm/actions/workflows/test.yml/badge.svg)](https://github.com/betadots/smart_proxy_hdm/actions/workflows/test.yml)
+[![Release](https://github.com/betadots/smart_proxy_hdm/actions/workflows/release.yml/badge.svg)](https://github.com/betadots/smart_proxy_hdm/actions/workflows/release.yml)
+[![RubyGem Version](https://img.shields.io/gem/v/smart_proxy_hdm.svg)](https://rubygems.org/gems/smart_proxy_hdm)
+[![RubyGem Downloads](https://img.shields.io/gem/dt/smart_proxy_hdm.svg)](https://rubygems.org/gems/smart_proxy_hdm)
+
 Allows reading hiera data from HDM (https://github.com/betadots/hdm)
 to display alongside hosts in Foreman.
 
@@ -36,3 +42,15 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+## Release a new version
+
+To make a new release, please do:
+
+* update the version in `lib/smart_proxy_hdm/version.rb`
+* Install gems with `bundle install --with release --path .vendor`
+* generate the changelog with `bundle exec rake changelog`
+* Check if the new version matches the closed issues/PRs in the changelog
+    * if required, add labels to unlabled PR/issues, regenerate the changelog
+* Create a PR with it
+* After it got merged, push a tag that's prefixed with `v`. GitHub Actions will do the actual release to Rubygems and GitHub Packages
