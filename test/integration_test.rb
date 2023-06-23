@@ -35,7 +35,7 @@ class HdmFeaturesTest < Minitest::Test
 
     assert_equal('running', feature['state'], failed_module_log)
     # https://theforeman.org/2019/04/smart-proxy-capabilities-explained.html
-    assert_equal({}, feature['settings'], 'There are no exposed settings')
-    assert_equal([], feature['capabilities'], 'There are no exposed capabilities')
+    assert_empty(feature['settings'], 'There are no exposed settings')
+    assert_empty(feature['capabilities'], 'There are no exposed capabilities')
   end
 end
