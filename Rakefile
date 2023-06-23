@@ -19,7 +19,7 @@ rescue LoadError
   # github_changelog_generator is an optional group
 else
   GitHubChangelogGenerator::RakeTask.new :changelog do |config|
-    version = Voxpupuli::Release::VERSION
+    version = Proxy::Hdm::VERSION
     config.future_release = "v#{version}" if /^\d+\.\d+.\d+$/.match?(version)
     config.header = "# Changelog\n\nAll notable changes to this project will be documented in this file."
     config.exclude_labels = %w[duplicate question invalid wontfix wont-fix skip-changelog]
