@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'mocha', '~> 2.0', '>= 2.0.4'
   s.add_development_dependency 'rake', '~> 13.0', '>= 13.0.6'
   s.add_development_dependency 'rubocop', '~> 1.52', '>= 1.52.1'
-  s.add_development_dependency 'rubocop-minitest', '~> 0.31.0'
+  s.add_development_dependency 'rubocop-minitest', '~> 0.32.2'
   s.add_development_dependency 'rubocop-performance', '~> 1.18'
   s.add_development_dependency 'rubocop-rails', '~> 2.19', '>= 2.19.1'
   s.add_development_dependency 'rubocop-rake', '~> 0.6.0'
