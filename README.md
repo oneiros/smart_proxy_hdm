@@ -18,9 +18,9 @@ This plugin is compatible with Smart Proxy 2.3 or higher.
 
 ## Configuration
 
-Configuration options for this plugin are in `/etc/foreman-proxy/settings.d/hdm.yml` and include:
+Configuration options for this plugin are in `/etc/foreman-proxy/settings.d/hdm.yml`.
 
-* example_setting: change this as an example
+More details can be found in the [Foreman HDM Plugin](https://github.com/betadots/foreman_hdm/blob/main/README.md)
 
 ## Contributing
 
