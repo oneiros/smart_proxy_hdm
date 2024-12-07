@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository_owner == 'betadots'
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Install Ruby 3.0
         uses: ruby/setup-ruby@v1
         with:
